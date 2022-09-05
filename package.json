@@ -1,0 +1,16 @@
+{
+  "name": "heimdlal-invite",
+  "version": "0.0.1",
+  "description": "Heimdall Invite Bot",
+  "main": "heimdall.js",
+  "scripts": {
+    "test": "node heimdall.js"
+  },
+  "author": "Heimdall",
+  "license": "ISC",
+  "dependencies": {
+    "discord.js": "^12.2.0",
+    "mongoose": "^5.9.19"
+  },
+  "keywords": []
+}
