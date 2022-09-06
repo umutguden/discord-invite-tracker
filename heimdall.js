@@ -167,7 +167,8 @@ client.on("message", async message => {
 
   if (command === "bonus") {
 
-if (message.author.id != "387675598044135436") return;
+if (message.author.id != "387675598044135436") return message.reply({content: `Kullanamazsın knk`});
+
     let uye = message.mentions.members.first () || message.guild.members.cache.get(args[0]);
     let sayi = args[1];
     if (!uye || !sayi) return message.reply(`Geçerli bir üye ve sayı belirtmelisin! (${botPrefix}bonus @üye +10/-10)`);
