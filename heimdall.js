@@ -7,7 +7,7 @@ mongoose.connect('mongodb+srv://heimdall:lf4dvex1FsiAocnk@cluster0.fczxxkr.mongo
 // Heimdall tarafından kodlanmıştır.
 
 client.on("ready", async () => {
-  client.user.setPresence({ activity: { name: durum }, status: "dnd" });
+  client.user.setPresence({ activity: { name: durum }, status: "online" });
   let botVoiceChannel = client.channels.cache.get(botVoiceChannelID);
   if (botVoiceChannel) botVoiceChannel.join().catch(err => console.error("Bot ses kanalına bağlanamadı!"));
   client.guilds.cache.forEach(guild => {
