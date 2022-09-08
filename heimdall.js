@@ -167,7 +167,8 @@ client.on("message", async message => {
 
   if (command === "bonus") {
 
-if (message.author.id != ["387675598044135436"&&"647070332171059200"&&"647780762170425355"]) return message.reply({content: `Bonus davet eklemek yalnızca Hanedan'a özeldir, fakat bonus davet satın almak istersen @Heimdall#2503 ile iletişime geçebilirsin.`});
+const arr = ["387675598044135436","647070332171059200","647780762170425355"]
+if(!arr.includes(message.author.id)) return message.reply({content: `Bonus davet eklemek yalnızca Hanedan'a özeldir.`});
 
     let uye = message.mentions.members.first () || message.guild.members.cache.get(args[0]);
     let sayi = args[1];
