@@ -1,16 +1,32 @@
 {
-  "name": "heimdlal-invite",
-  "version": "0.0.1",
-  "description": "Heimdall Invite Bot",
-  "main": "heimdall.js",
+  "name": "invite-tracker",
+  "version": "1.0.0",
+  "description": "A Discord bot to track and manage server invites with leaderboards and bonus system",
+  "main": "app.js",
   "scripts": {
-    "test": "node heimdall.js"
+    "start": "node app.js",
+    "dev": "node app.js"
   },
-  "author": "Heimdall",
-  "license": "ISC",
+  "author": "ichbinheimdall",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ichbinheimdall/invite-tracker.git"
+  },
+  "keywords": [
+    "discord",
+    "bot",
+    "invite",
+    "tracker",
+    "leaderboard",
+    "mongodb"
+  ],
   "dependencies": {
-    "discord.js": "^12.2.0",
-    "mongoose": "^5.9.19"
+    "discord.js": "^12.5.3",
+    "dotenv": "^16.0.0",
+    "mongoose": "^5.13.0"
   },
-  "keywords": []
+  "engines": {
+    "node": ">=14.0.0"
+  }
 }
