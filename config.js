@@ -1,36 +1,20 @@
 /**
- * Configuration loader with environment variable support
- * Environment variables override config.json values
+ * Configuration loader using environment variables
+ * Create a .env file from .env.example
  */
 
 require('dotenv').config();
 
-const defaultConfig = {
-  botToken: '',
-  botPrefix: '!',
-  mongoUri: '',
-  botOwner: '',
-  embedColor: '#5865F2',
-  fakeAccountDays: 7
-};
-
-let fileConfig = {};
-try {
-  fileConfig = require('./config.json');
-} catch (e) {
-  // config.json not found, using defaults
-}
-
 module.exports = {
   // Bot credentials (REQUIRED)
-  botToken: process.env.BOT_TOKEN || fileConfig.botToken || defaultConfig.botToken,
-  mongoUri: process.env.MONGO_URI || fileConfig.mongoUri || defaultConfig.mongoUri,
+  botToken: process.env.BOT_TOKEN || '',
+  mongoUri: process.env.MONGO_URI || '',
   
   // Bot settings
-  botPrefix: process.env.BOT_PREFIX || fileConfig.botPrefix || defaultConfig.botPrefix,
-  botOwner: process.env.BOT_OWNER || fileConfig.botOwner || defaultConfig.botOwner,
+  botPrefix: process.env.BOT_PREFIX || '!',
+  botOwner: process.env.BOT_OWNER || '',
   
   // Customization
-  embedColor: process.env.EMBED_COLOR || fileConfig.embedColor || defaultConfig.embedColor,
-  fakeAccountDays: parseInt(process.env.FAKE_ACCOUNT_DAYS) || fileConfig.fakeAccountDays || defaultConfig.fakeAccountDays
+  embedColor: process.env.EMBED_COLOR || '#5865F2',
+  fakeAccountDays: parseInt(process.env.FAKE_ACCOUNT_DAYS) || 7
 };

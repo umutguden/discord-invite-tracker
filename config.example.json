@@ -1,8 +1,0 @@
-{
-  "botToken": "YOUR_BOT_TOKEN_HERE",
-  "mongoUri": "YOUR_MONGODB_URI_HERE",
-  "botPrefix": "!",
-  "botOwner": "YOUR_DISCORD_USER_ID",
-  "embedColor": "#5865F2",
-  "fakeAccountDays": 7
-}
