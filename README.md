@@ -1,4 +1,4 @@
-# Invite Tracker
+# Discord Invite Tracker 
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![Node.js](https://img.shields.io/badge/Node.js-14+-green.svg)](https://nodejs.org/)
