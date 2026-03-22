@@ -7,11 +7,11 @@
     "start": "node app.js",
     "dev": "node app.js"
   },
-  "author": "ichbinheimdall",
+  "author": "umutguden",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/ichbinheimdall/invite-tracker.git"
+    "url": "https://github.com/umutguden/invite-tracker.git"
   },
   "keywords": [
     "discord",
