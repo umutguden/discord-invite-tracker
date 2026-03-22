@@ -26,7 +26,7 @@ A lightweight Discord bot that tracks server invites, maintains leaderboards, an
 
 ```bash
 # Clone the repository
-git clone https://github.com/ichbinheimdall/invite-tracker.git
+git clone https://github.com/umutguden/invite-tracker.git
 cd invite-tracker
 
 # Install dependencies
