@@ -1,46 +1,41 @@
-# Discord Invite Tracker 
+# Discord Invite Tracker
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![Licence: MIT](https://img.shields.io/badge/Licence-MIT-yellow.svg)](LICENSE)
 [![Node.js](https://img.shields.io/badge/Node.js-14+-green.svg)](https://nodejs.org/)
 [![discord.js](https://img.shields.io/badge/discord.js-v12-blue.svg)](https://discord.js.org/)
 
-A lightweight Discord bot that tracks server invites, maintains leaderboards, and supports bonus invite management. Perfect for community servers that reward members for inviting others.
+A lightweight Discord bot that tracks server invites, maintains leaderboards, and supports bonus invite management.
 
-## ✨ Features
+## Features
 
-- 📊 **Invite Tracking** — Automatically tracks who invited each member
-- 🏆 **Leaderboards** — Display top inviters in your server
-- 🎁 **Bonus System** — Admins can add/remove bonus invites
-- ❌ **Fake Detection** — Identifies accounts created within 7 days
-- 🔄 **Leave Tracking** — Adjusts invite counts when members leave
-- 🌐 **Multi-Server** — Works across multiple Discord servers
-- 🔒 **Secure** — Environment variable support for credentials
+- **Invite tracking**: automatically records who invited each member
+- **Leaderboards**: displays top inviters in your server
+- **Bonus system**: admins can add or remove bonus invites
+- **Fake detection**: flags accounts created within 7 days
+- **Leave tracking**: adjusts invite counts when members leave
+- **Multi-server**: works across multiple Discord servers
 
-## 📦 Prerequisites
+## Prerequisites
 
-- **Node.js** v14 or higher
-- **MongoDB** database (local or [MongoDB Atlas](https://www.mongodb.com/atlas))
-- A [Discord Bot Token](https://discord.com/developers/applications)
+- Node.js v14 or later
+- MongoDB (local or [MongoDB Atlas](https://www.mongodb.com/atlas))
+- [Discord bot token](https://discord.com/developers/applications)
 
-## 🚀 Quick Start
+## Quick Start
 
 ```bash
-# Clone the repository
-git clone https://github.com/umutguden/invite-tracker.git
-cd invite-tracker
-
-# Install dependencies
+git clone https://github.com/umutguden/discord-invite-tracker.git
+cd discord-invite-tracker
 npm install
 
-# Configure (see Configuration section)
+# Configure (see below)
 cp config.example.json config.json
 # Edit config.json with your values
 
-# Start the bot
 npm start
 ```
 
-## ⚙️ Configuration
+## Configuration
 
 ### Option 1: config.json
 
@@ -57,13 +52,11 @@ Copy `config.example.json` to `config.json` and fill in your values:
 }
 ```
 
-### Option 2: Environment Variables (Recommended for Production)
+### Option 2: Environment Variables
 
 ```bash
 cp .env.example .env
 ```
-
-Edit `.env`:
 
 ```bash
 BOT_TOKEN=your_discord_bot_token
@@ -72,9 +65,9 @@ BOT_PREFIX=!
 BOT_OWNER=your_discord_user_id
 ```
 
-> ⚠️ **Security:** Never commit `config.json` or `.env` to version control!
+> **Security**: Never commit `config.json` or `.env` to version control.
 
-## 🎮 Commands
+## Commands
 
 Default prefix: `!`
 
@@ -83,54 +76,50 @@ Default prefix: `!`
 | `!invites [@user]` | View invite count for yourself or another user |
 | `!leaderboard` | Display top 10 inviters |
 | `!inviter [@user]` | See who invited a specific user |
-| `!bonus @user <amount>` | Add or remove bonus invites (Admin only) |
+| `!bonus @user <amount>` | Add or remove bonus invites (admin only) |
 | `!help` | Show all commands |
 
-### Command Aliases
+### Aliases
 
-- `!invites` → `!inv`
-- `!leaderboard` → `!lb`, `!top`
-- `!inviter` → `!whoinvited`
-- `!bonus` → `!addbonus`
+- `!invites` / `!inv`
+- `!leaderboard` / `!lb` / `!top`
+- `!inviter` / `!whoinvited`
+- `!bonus` / `!addbonus`
 
-## 📊 Invite Types
+## Invite Types
 
 | Type | Description |
 |------|-------------|
 | **Regular** | Standard invites from invite links |
-| **Bonus** | Manually added/removed by admins |
+| **Bonus** | Manually added or removed by admins |
 | **Fake** | Accounts less than 7 days old |
 
-The total invite count is: `Regular + Bonus` (Fake invites are tracked separately)
+Total invite count: `Regular + Bonus` (fake invites are tracked separately).
 
-## 📁 Project Structure
+## Project Structure
 
 ```
-invite-tracker/
+discord-invite-tracker/
 ├── app.js              # Main bot file
 ├── config.js           # Configuration loader
 ├── config.json         # Your config (gitignored)
 ├── config.example.json # Config template
 ├── .env                # Environment variables (gitignored)
 ├── .env.example        # Environment template
-├── .gitignore          # Git ignore rules
 ├── package.json        # Dependencies
 ├── Procfile            # Heroku deployment
-├── LICENSE             # MIT License
+├── LICENSE             # MIT Licence
 └── models/
     └── inviter.js      # MongoDB schema
 ```
 
-## 🚀 Deployment
+## Deployment
 
 ### Heroku
 
-1. Create a new Heroku app
-2. Set Config Vars:
-   - `BOT_TOKEN`
-   - `MONGO_URI`
-3. Deploy via GitHub integration or Git push
-4. The included `Procfile` handles startup
+1. Create a new Heroku app.
+2. Set config vars: `BOT_TOKEN`, `MONGO_URI`.
+3. Deploy via GitHub integration or Git push. The included `Procfile` handles startup.
 
 ### Railway / Render
 
@@ -139,38 +128,26 @@ Set environment variables in the dashboard and deploy from GitHub.
 ### VPS / Self-Hosted
 
 ```bash
-# Using PM2 for process management
 npm install -g pm2
 pm2 start app.js --name invite-tracker
 pm2 save
 ```
 
-## 🔧 Bot Permissions
+## Bot Permissions
 
-The bot requires these Discord permissions:
+Required Discord permissions:
 
-- `Manage Server` — Required to access invite data
-- `Read Messages` / `View Channels`
-- `Send Messages`
-- `Embed Links`
-- `Add Reactions`
-- `Read Message History`
+- Manage Server (to access invite data)
+- Read Messages / View Channels
+- Send Messages
+- Embed Links
+- Add Reactions
+- Read Message History
 
-**Invite URL with permissions:**
-```
-https://discord.com/api/oauth2/authorize?client_id=YOUR_CLIENT_ID&permissions=8&scope=bot
-```
+## Licence
 
-## 🔐 Security
+MIT. See [LICENSE](LICENSE).
 
-- Use environment variables for production
-- Never commit tokens or credentials
-- The `.gitignore` excludes sensitive files by default
+## Acknowledgements
 
-## 📄 License
-
-This project is licensed under the MIT License — see the [LICENSE](LICENSE) file for details.
-
-## 🙏 Acknowledgments
-
-Built with [discord.js](https://discord.js.org/) and [Mongoose](https://mongoosejs.com/)
+Built with [discord.js](https://discord.js.org/) and [Mongoose](https://mongoosejs.com/).
